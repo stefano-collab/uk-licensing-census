@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The UK Licensing Landscape - StudioCanal</title>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* client: studiocanal · donor: freckle.io EXACT (live extraction, BRAND-NOTES.md) · PRODUCTION SHELL
+   sticky translucent header · hero flush to header · sectioned bands with gutter gaps between them */
+:root{
+  --bg:#fdfdfc; --surface:#fafaf9; --card:#ffffff; --line:#e7e5e4; --frame:#ffffff;
+  --ink:#0c0a09; --stone:#57534e; --mid:#78716c; --faint:#a8a29e;
+  --indigo:#6366f1; --indigo-deep:#4f46e5; --blue:#2563eb; --orange:#ea580c;
+  --or100:#ffedd5; --bl100:#dbeafe; --in100:#e0e7ff; --gr100:#d5f1d0; --green:#15803d;
+  --dot:#eae8e3; --litbg:#ffedd5; --litline:#fdba74; --litink:#9a3412;
+  --hdr:rgba(253,253,252,.82);
+}
+body.dark{
+  --bg:#141210; --surface:#1a1816; --card:#1e1c19; --line:#2e2b27; --frame:#191714;
+  --ink:#f5f4f2; --stone:#c8c4bd; --mid:#a09a90; --faint:#6f6a62;
+  --dot:#252220; --litbg:#3a2415; --litline:#7c3a12; --litink:#fdba74;
+  --in100:#312e81; --indigo-deep:#a5b4fc; --green:#4ade80; --hdr:rgba(20,18,16,.82);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);
+     font:400 14px/1.55 "Geist",system-ui,sans-serif;
+     background-image:radial-gradient(circle at 1px 1px,var(--dot) 1px,transparent 0);
+     background-size:14px 14px;transition:background-color .3s}
+.mono{font-family:"Geist Mono",ui-monospace,Menlo,monospace}
+/* sticky translucent header */
+header{position:sticky;top:0;z-index:40;background:var(--hdr);
+       backdrop-filter:blur(10px) saturate(1.3);-webkit-backdrop-filter:blur(10px) saturate(1.3);
+       border-bottom:1px solid var(--line)}
+.tb{max-width:1080px;margin:0 auto;padding:15px 44px;display:flex;
+    justify-content:space-between;align-items:center}
+.logoimg{height:20px;display:block}
+body.dark .logoimg{filter:invert(1)}
+.tb .right{display:flex;gap:20px;align-items:center}
+.ghost{font:400 14px "Geist",sans-serif;color:var(--stone);cursor:pointer;transition:.15s}
+.ghost:hover{color:var(--ink)}
+.pill{font:500 12.5px "Geist Mono",monospace;color:var(--indigo-deep);border:1px solid var(--line);
+      border-radius:10px;padding:8px 14px;background:var(--card);box-shadow:0 1px 2px #0c0a090d}
+.cta{font:500 14px "Geist",sans-serif;background:var(--indigo);color:#fff;border:0;
+     border-radius:9px;padding:10px 18px;cursor:pointer;transition:background .15s}
+.cta:hover{background:#4f46e5}
+/* sectioned bands: full-width rules, framed column, dotted gaps between */
+.band{border-bottom:1px solid var(--line)}
+.band+.band{border-top:1px solid var(--line);margin-top:34px}
+.band:first-of-type{border-top:none;margin-top:0}
+.col{max-width:1080px;margin:0 auto;background:var(--frame);
+     border-left:1px solid var(--line);border-right:1px solid var(--line);
+     padding:38px 44px 34px;position:relative}
+.col::before,.col::after{color:#c9c5bd;font:400 12px/9px "Geist Mono",monospace;
+     position:absolute;top:-5px;content:"+"}
+.col::before{left:-4px}.col::after{right:-4px}
+/* hero */
+.hero{max-width:60ch}
+.kick{font:500 11px "Geist Mono",monospace;letter-spacing:1.4px;text-transform:uppercase;
+      color:var(--orange);margin-bottom:14px}
+h1{font-size:38px;font-weight:500;letter-spacing:-.8px;line-height:1.18;margin-bottom:12px}
+.hero p{font-size:15px;color:var(--stone)}
+/* ask bar (sticky below header) */
+.askwrap{position:sticky;top:57px;z-index:30;padding:12px 0 6px;margin:16px 0 4px;
+         background:linear-gradient(var(--frame) 80%,transparent)}
+.ask{background:var(--card);border:1px solid var(--line);border-radius:10px;
+     box-shadow:0 1px 2px #0c0a0910;padding:9px;display:flex;gap:8px;align-items:center;
+     transition:box-shadow .2s,border-color .2s;position:relative;overflow:hidden}
+.ask.on{border-color:#c7d2fe;box-shadow:0 0 0 3px #e0e7ff55}
+.ask input{flex:1;font:400 14.5px "Geist",sans-serif;border:0;outline:none;
+           padding:7px 10px;color:var(--ink);background:transparent}
+.ask input::placeholder{color:var(--faint)}
+.ask button{font:500 13px "Geist Mono",monospace;background:var(--indigo);color:#fff;
+            border:0;border-radius:8px;padding:10px 18px;cursor:pointer;min-width:96px;
+            transition:background .15s}
+.ask button:hover,.ask button:disabled{background:#4f46e5}
+.sweep{position:absolute;left:0;bottom:0;height:2px;width:0;
+       background:linear-gradient(90deg,var(--indigo),var(--orange))}
+.sweep.go{width:100%;transition:width .5s cubic-bezier(.2,.7,.3,1)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.chip{font:500 12px "Geist Mono",monospace;border:1px solid var(--line);background:var(--card);
+      color:var(--stone);border-radius:8px;padding:6px 12px;cursor:pointer;transition:.15s}
+.chip:hover{border-color:#c7d2fe;color:var(--indigo-deep)}
+.chip.reset{color:var(--faint)}
+.status{min-height:22px;font:500 12px "Geist Mono",monospace;color:var(--mid);margin:8px 2px 0}
+.status .ok{color:var(--green)}
+.status .cursor::after{content:"▌";animation:blink .8s step-end infinite;color:var(--faint)}
+@keyframes blink{50%{opacity:0}}
+/* report */
+.viewhead{display:flex;align-items:center;gap:12px;margin:4px 0 14px}
+.viewhead h2{font-size:19px;font-weight:500;letter-spacing:-.4px}
+.viewpill{font:500 10.5px "Geist Mono",monospace;letter-spacing:.6px;text-transform:uppercase;
+          background:var(--in100);color:var(--indigo-deep);border-radius:6px;padding:4px 9px}
+#stage{transition:opacity .14s ease-out}
+#stage.out{opacity:0}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:16px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:12px;
+     padding:15px 16px 12px;opacity:0;transform:translateY(7px);position:relative}
+.kpi.in{opacity:1;transform:none;transition:opacity .28s ease-out,transform .28s ease-out,box-shadow .3s}
+.kpi.hot{box-shadow:0 0 0 2px #c7d2fe66,0 2px 4px #0c0a091f;border-color:transparent}
+.kpi .n{font:500 22px "Geist Mono",monospace;letter-spacing:-.5px}
+.kpi.hot .n{color:var(--indigo-deep)}
+.kpi .l{font:500 10.5px "Geist Mono",monospace;letter-spacing:.6px;text-transform:uppercase;
+        color:var(--mid);margin-top:6px}
+.kpi[data-prov]{cursor:help}
+.kpi[data-prov]:hover::after{content:attr(data-prov);position:absolute;left:8px;right:8px;
+  bottom:calc(100% + 7px);background:var(--ink);color:var(--bg);border-radius:8px;
+  padding:8px 11px;font:500 10.5px/1.5 "Geist Mono",monospace;z-index:8;
+  box-shadow:0 6px 18px #0c0a0933;letter-spacing:0;text-transform:none}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:17px 19px}
+.panel h3{font-size:13.5px;font-weight:500;margin-bottom:13px}
+.panel h3 span{color:var(--faint);font-weight:400}
+.row{display:grid;grid-template-columns:16px 132px 1fr 40px;gap:10px;align-items:center;
+     margin-bottom:9px;border-radius:8px;padding:3px 6px;opacity:0;transform:translateY(6px);
+     cursor:pointer}
+.row.in{opacity:1;transform:none;transition:opacity .26s ease-out,transform .26s ease-out,background .3s}
+.node{width:14px;height:14px;border-radius:4px;border:1px solid #0c0a0914}
+.row .c{font-size:12.5px;color:var(--stone)}
+.row .t{height:11px;display:flex;background:var(--surface);border-radius:4px;overflow:hidden}
+.row .a{background:var(--blue);height:100%;opacity:.85}
+.row .k{background:var(--bl100);height:100%}
+body.dark .row .k{background:#1e3a5f}
+.row .v{font:500 12.5px "Geist Mono",monospace;text-align:right}
+.row.zero .c,.row.zero .v{color:var(--faint)}
+.row.lit{background:var(--litbg);box-shadow:inset 0 0 0 1px var(--litline)}
+.row.lit .c,.row.lit .v{color:var(--litink);font-weight:500}
+.row.lit2{box-shadow:inset 0 0 0 1px var(--litline)}
+.row.lit2 .c{color:var(--litink)}
+.row.fade{opacity:.3}
+.duelwrap{display:grid;grid-template-columns:1fr auto 1fr;gap:16px;align-items:stretch;margin-bottom:12px}
+.duelwrap.single{grid-template-columns:1fr}
+.duel{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px 22px;
+      opacity:0;transform:translateY(7px)}
+.duel.in{opacity:1;transform:none;transition:.3s ease-out}
+.duel .dn2{font:500 12px "Geist Mono",monospace;text-transform:uppercase;letter-spacing:.8px;
+           color:var(--mid);margin-bottom:8px}
+.duel .dv{font:500 34px "Geist Mono",monospace;letter-spacing:-1px;margin-bottom:12px}
+.duel .db{height:12px;display:flex;background:var(--surface);border-radius:4px;overflow:hidden;
+          margin-bottom:8px}
+.duel .db .a{background:var(--blue);opacity:.85}.duel .db .k{background:var(--bl100)}
+.duel .note{font-size:12.5px;color:var(--stone);line-height:1.55}
+.vs{align-self:center;font:500 13px "Geist Mono",monospace;color:var(--faint);
+    border:1px solid var(--line);border-radius:8px;padding:6px 10px;background:var(--card)}
+.legend{display:flex;gap:18px;margin:2px 4px 14px;font:500 11px "Geist Mono",monospace;
+        color:var(--mid);text-transform:uppercase;letter-spacing:.5px}
+.legend i{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.insight{background:var(--surface);border:1px solid var(--line);border-radius:12px;
+         padding:15px 19px;margin-bottom:4px;opacity:0;transform:translateY(6px)}
+.insight.in{opacity:1;transform:none;transition:.3s ease-out}
+.insight .t{font-size:13.5px;font-weight:500;margin-bottom:4px}
+.insight .b{font-size:13px;color:var(--stone);max-width:94ch}
+/* hotspots */
+.hs{display:inline-block;font:500 11px "Geist Mono",monospace;color:var(--orange);
+    cursor:help;position:relative;margin-left:7px;border:1px solid var(--litline);
+    border-radius:4px;width:15px;height:15px;line-height:13px;text-align:center;vertical-align:2px}
+.hs:hover::after{content:attr(data-note);position:absolute;left:50%;transform:translateX(-50%);
+    bottom:calc(100% + 7px);background:var(--ink);color:var(--bg);border-radius:8px;
+    padding:7px 11px;font:500 10.5px/1.5 "Geist Mono",monospace;width:250px;z-index:8;
+    box-shadow:0 6px 18px #0c0a0933;text-transform:none;letter-spacing:0}
+footer{max-width:1080px;margin:0 auto;padding:18px 44px 26px;font-size:11.5px;line-height:1.65;
+       color:var(--faint)}
+footer b{color:var(--mid)}
+/* evidence drawer */
+.scrim{position:fixed;inset:0;background:#0c0a0926;z-index:45;opacity:0;pointer-events:none;transition:opacity .25s}
+.scrim.on{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:-410px;width:390px;height:100%;background:var(--card);
+        border-left:1px solid var(--line);box-shadow:-12px 0 32px #0c0a0918;z-index:50;
+        transition:right .28s cubic-bezier(.2,.7,.3,1);display:flex;flex-direction:column}
+.drawer.open{right:0}
+.drawer .dh{padding:18px 20px 14px;border-bottom:1px solid var(--line);display:flex;
+            justify-content:space-between;align-items:center}
+.drawer .dh b{font:500 14px "Geist",sans-serif}
+.drawer .dh .x{cursor:pointer;font:500 11px "Geist Mono",monospace;color:var(--faint);
+               border:1px solid var(--line);border-radius:6px;padding:4px 9px}
+.drawer .dsub{padding:10px 20px 0;font:500 10.5px "Geist Mono",monospace;letter-spacing:.6px;
+              text-transform:uppercase;color:var(--faint)}
+.drawer .dbody{padding:12px 20px 20px;overflow-y:auto}
+.ev{border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin-bottom:10px}
+.ev .en{font:500 13px "Geist Mono",monospace;word-break:break-all}
+.ev .ei{font-size:12px;color:var(--indigo-deep);margin-top:3px}
+.ev .eq{font-size:12.5px;color:var(--stone);margin-top:6px;border-left:2px solid var(--litline);
+        padding-left:9px;line-height:1.5}
+.ev .es{font:500 9.5px "Geist Mono",monospace;color:var(--faint);margin-top:7px;
+        text-transform:uppercase;letter-spacing:.6px}
+/* presentation mode */
+body.present header,body.present .band.herob,body.present footer{display:none}
+body.present .col{max-width:1220px}
+body.present .viewhead h2{font-size:30px}
+body.present .kpi .n{font-size:32px}
+.pbar{display:none;position:fixed;bottom:22px;left:50%;transform:translateX(-50%);z-index:60;
+      background:#0c0a09;color:#fff;border-radius:10px;padding:10px 16px;
+      font:500 12px "Geist Mono",monospace;gap:14px;align-items:center}
+body.present .pbar{display:flex}
+.pbar .pd{width:7px;height:7px;border-radius:50%;background:#57534e;cursor:pointer}
+.pbar .pd.on{background:var(--orange)}
+.pbar .pk{cursor:pointer;color:#a8a29e;user-select:none}
+.pbar .pk:hover{color:#fff}
+/* mobile: desktop-only, say so */
+.mobilegate{display:none}
+@media(max-width:767px){
+  header,.band,footer,.pbar,.drawer,.scrim{display:none!important}
+  .mobilegate{display:flex;position:fixed;inset:0;z-index:99;background:var(--bg);
+    background-image:radial-gradient(circle at 1px 1px,var(--dot) 1px,transparent 0);
+    background-size:14px 14px;flex-direction:column;align-items:center;
+    justify-content:center;text-align:center;padding:36px;gap:14px}
+  .mobilegate img{height:26px}
+  .mobilegate .m1{font:500 13px "Geist Mono",monospace;letter-spacing:1px;
+    text-transform:uppercase;color:var(--orange)}
+  .mobilegate .m2{font-size:15px;color:var(--stone);max-width:30ch}
+}
+@media print{
+  header .right,.askwrap,.pbar,.scrim,.drawer{display:none!important}
+  body{background:#fff!important;background-image:none!important;color:#0c0a09!important}
+  header{position:static;background:#fff}
+  .band{border:none;margin:0}
+  .col{border:none;padding:12px 8px;max-width:100%}
+  .kpi,.panel,.insight{break-inside:avoid;border-color:#ddd}
+}
+@media(max-width:900px){.kpis{grid-template-columns:1fr 1fr}.grid,.duelwrap{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){
+  .kpi,.row,.insight,.duel{opacity:1!important;transform:none!important;transition:none!important}
+  #stage{transition:none}.status .cursor::after{animation:none}}
+</style>
+</head>
+<body>
+
+<div class="mobilegate">
+  <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNC4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDQzMzYzKSAgLS0+DQo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYWxxdWVfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHdpZHRoPSI4NjAuOTVweCIgaGVpZ2h0PSIxNTBweCIgdmlld0JveD0iMCAwIDg2MC45NSAxNTAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDg2MC45NSAxNTAiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHJlY3QgeD0iMzAuOTc1IiB5PSIxNy41IiBmaWxsPSIjRkZGRkZGIiBzdHJva2U9IiMwMDAwMDAiIHN0cm9rZS13aWR0aD0iMC45ODY3IiB3aWR0aD0iODA4LjAwMiIgaGVpZ2h0PSIxMDciLz4NCjxwYXRoIGZpbGw9IiMxQTE3MUIiIGQ9Ik0yNzAuMTY1LDUyLjcwNmgtNC44MjlWOTkuMzRoNC44MjljMTQuMjc5LDAsMjMuNzEzLTkuMTAyLDIzLjcxMy0yMy4yOTENCglDMjkzLjg3OCw2MS44MTYsMjg0LjQ0NCw1Mi43MDYsMjcwLjE2NSw1Mi43MDYgTTUzNC4yMTMsODYuNzAzaDE3Ljk5NmwtOC44NS0yNi41NTdMNTM0LjIxMyw4Ni43MDN6IE0zOTYuNjcyLDUyLjk0DQoJYy02LjMwNiwwLTExLjg0MSwyLjMyNC0xNi41MzYsNi44OWMtNC41NDMsNC41MjktNi44NjEsOS44ODYtNi44NjEsMTYuMjE5YzAsNi41MTQsMi4yMTIsMTIuMjE3LDYuNzU2LDE2Ljc0Ng0KCWM0LjU1OSw0LjU1OSwxMC4xMTEsNi45MDYsMTYuNjQyLDYuOTA2YzYuNTczLDAsMTEuOTYxLTIuMzQ4LDE2LjU3OS02LjkwNmM0LjU0NS00LjUyOSw2Ljg3Ny0xMC4wOTYsNi44NzctMTYuNTQzDQoJYzAtNi41MzctMi4zMzItMTEuOTkyLTYuODc3LTE2LjUzNUM0MDguNjMzLDU1LjE1OSw0MDMuMTEsNTIuOTQsMzk2LjY3Miw1Mi45NCBNNzEyLjkyOCw4Ni43MDNoMTcuOTY3bC04Ljg3OS0yNi41NTcNCglMNzEyLjkyOCw4Ni43MDN6IE04MTcuMzQ4LDExNy42OTdoLTQ3LjY2NnYtODMuMzFoMjEuNjA1Vjk5LjM0aDI2LjA2MVYxMTcuNjk3TDgxNy4zNDgsMTE3LjY5N3ogTTc0Mi4yMzksMTE3LjY5N2wtNS40NzktMTQuNDc1DQoJaC0yOS44MjJsLTUuNjU0LDE0LjQ3NWgtMjIuOTNsMzIuMDE4LTgzLjMxaDIzLjU2MWwzMS40MTYsODMuMzFINzQyLjIzOXogTTY3NC4wODEsMTE3LjY5N2gtMjEuNjY2bC0zOS43ODEtNTF2NTFoLTIxLjY2NnYtODMuMzENCgloMjEuNjY2bDM5Ljc4MSw1MC45NThWMzQuMzg3aDIxLjY2NlYxMTcuNjk3eiBNNTYzLjUyMiwxMTcuNjk3bC01LjQxNi0xNC40NzVoLTI5LjkxbC01LjY4OCwxNC40NzVoLTIyLjg0MmwzMi4wMi04My4zMWgyMy41DQoJbDMxLjQ0Nyw4My4zMUg1NjMuNTIyeiBNNDk2LjgzOCwxMTMuOTM0YzAsMS4yMjEtMC45NjMsMi4xOTctMy4wMzcsMi45OGMtNS45NjEsMi0xMS4zNDYsMi45NzktMTYuNDkyLDIuOTc5DQoJYy03LjY0NSwwLTE0Ljk4NC0xLjg2Ny0yMi4wODgtNS43NDZjLTcuNjc0LTQuMzA1LTEzLjQ4LTEwLjE3Mi0xNy4xODQtMTcuMjEzYy0yLjE1OCw0LjE1Mi01LjAzMSw3Ljk0My04LjY1NywxMS4yODMNCgljLTguOTA2LDguMzUyLTE5LjgzMSwxMi40ODgtMzIuNzA5LDEyLjQ4OGMtMTMuMDAxLDAtMjMuOTU0LTQuMjQyLTMyLjg2MS0xMi41NzhjLTguNzcxLTguNDI2LTEzLjE5NC0xOC43NDYtMTMuMTk0LTMxLjA4NA0KCWMwLTkuNDM1LDIuNDIyLTE3Ljg4Miw3LjI5Ni0yNS4zNTNjNC45Mi03LjQyNSwxMS43MDctMTIuOTg0LDIwLjIzNy0xNi40MzdjNS41MjEtMi4yMDUsMTEuNTU1LTMuMzExLDE4LjExNS0zLjMxMQ0KCWMxMy40NTEsMCwyNC41MjUsNC4yMzUsMzMuMzExLDEyLjU1NmMzLjYyNywzLjQ0Niw2LjQ3OSw3LjM1LDguNjQ1LDExLjZsMi4xMDUtMy44MDdjNC45MDYtNy4zOCwxMS40MzYtMTIuODA0LDE5LjY4Mi0xNi4yNTcNCgljNS4zMjYtMi4yOTQsMTAuOTUzLTMuNDQ1LDE3LjA5Mi0zLjQ0NWM0LjEyMywwLDguNTc4LDAuNjc2LDEzLjMzLDEuODg4bDMuNTUxLDEuMjM0bDEuMjY0LDAuNTU3bDEuNTA0LDIuMjM0VjU5LjkybC0wLjQ4LDAuNzk4DQoJbC0xLjAyMS0wLjU3MmMtMS42ODgtMS42OTItNC4wOTItMy4wMDItNy40MDItNC4wNzdjLTMuNDMtMS4yNDktNi41MjktMS44MDctOS4xNzgtMS44MDdjLTkuNjg5LDAtMTcuNzg1LDUuMTMxLTIxLjQyNiwxMy42NTQNCgljLTEuMjM0LDIuNzk5LTEuNzc1LDUuNzkzLTEuNzc1LDkuMDAzYzAsNi4zMzYsMi4zMTYsMTEuNDM3LDcuMDEyLDE1LjQzOGM0LjMwMywzLjY3LDkuNjYsNS41NTIsMTUuOTc5LDUuNTUyDQoJYzcuMjI1LDAsMTIuNzkxLTEuOTcyLDE2Ljg1Mi02LjA5M2wwLjk2My0wLjY5MmwwLjU3MiwyLjEzN3YyMC42NzNINDk2LjgzOHogTTM0NC4zNTcsMTE3LjY5N0gzMjIuNzJ2LTgzLjMxaDIxLjYzN1YxMTcuNjk3eg0KCSBNMzA0LjMzNSwxMDUuMzU5Yy04LjEyNSw4LjIxNS0xNy42NjUsMTIuMzM4LTI4Ljc5OCwxMi4zMzhIMjQzLjY0di04My4zMWgzMS44OTdjMTEuMDE0LDAsMjAuNTUzLDQuMjIxLDI4LjYzMywxMi41NDENCgljOC4yMTQsOC4zMzYsMTIuMzUzLDE4LjAxLDEyLjM1MywyOS4xMjFDMzE2LjUyMiw4Ny4yNDIsMzEyLjM4NCw5Ny4wNjgsMzA0LjMzNSwxMDUuMzU5IE0yMzcuMTQsODIuNDc1DQoJYzAsNS43OTEtMC40NjcsMTAuMzItMS40NDUsMTMuNzY5Yy0xLjIzMyw0LjMzMi0zLjQ0NSw4LjIyOS02LjY5NSwxMS44ODVjLTcuMDExLDcuODY3LTE2LjY0MSwxMS43NjctMjguNzY4LDExLjc2Nw0KCWMtNS44OTgsMC0xMS4zOS0wLjk3OS0xNi40MTUtMi44NzNjLTExLjU1NS00LjQyNC0xNy44LTEyLjc2MS0xOS4wMDMtMjYuMTgxYy0wLjE5Ni0yLjQ4My0wLjM0Ni01LjIzNS0wLjM0Ni04LjM2NFYzNC4zODdoMjEuNjUNCgl2NDUuMDkxYzAsNS4yMDcsMC4xNjYsOC40MjgsMC40MjEsOS43OGwxLjkyNiw1LjExNWMyLjQ4Myw0LjM2Miw2LjQ0LDYuNDM4LDEyLjE0Miw2LjQzOGM1Ljg4MywwLDEwLjA1MS0yLjI1NiwxMi42MDktNi43ODcNCgljMS40NzUtMi42NjIsMi4yNDItNy41MzcsMi4yNDItMTQuNTQ5VjM0LjM4N2gyMS42ODJWODIuNDc1TDIzNy4xNCw4Mi40NzV6IE0xNTkuMTU3LDUyLjcwNmgtMTguMDI1djY0Ljk5MkgxMTkuNDhWNTIuNzA2aC0xNy41MjgNCglWMzQuMzg3aDU3LjIwNVY1Mi43MDZMMTU5LjE1Nyw1Mi43MDZ6IE05OC4yNjUsMTA1LjI2OGMtMi41MjcsNC44NDctNi42NjYsOC42NjYtMTIuNTMzLDExLjMwMQ0KCWMtNS4wMjUsMi4yMTEtMTAuNjgzLDMuMzI0LTE2Ljc3NiwzLjMyNGMtNi4xMjMsMC0xMi4zMzctMS4zMjQtMTguODgyLTMuOTg1Yy0zLjI1LTEuMzI0LTUuODA4LTIuNTQzLTcuNDQ4LTMuNzkxbC0yLjYxOC0xLjczDQoJbDkuMTMzLTE3LjM2MmM2LjU2LDUuNzE3LDEyLjkwOSw4LjQ1NSwxOS4xNTMsOC40NTVjMi45NjQsMCw1LjMxMi0wLjY2Miw3LjE3Ny0xLjg2NWMyLjEzNy0xLjQ3NSwzLjI4MS0zLjU4MiwzLjI4MS02LjM1DQoJYzAtMi4zNDctMS4xNDQtNC4zNDktMy40NzYtNi4wMjFjLTEuMDk5LTAuNzUyLTIuNzg0LTEuNDI5LTUuMTE2LTIuMjExYy0wLjc4Mi0wLjIyOC0yLjIxMS0wLjY2Mi00LjQyMy0xLjMxbC00LjQ1My0xLjM0DQoJYy0yLjczOC0wLjc5Ny01LjQ2Mi0xLjkxLTguMjMtMy4zODVjLTYuNTE1LTMuMzAzLTkuNzY1LTkuNTI1LTkuNzY1LTE4LjUyMWMwLTguNDM0LDIuNjYzLTE1LjIxMSw3LjkyOS0yMC4zMjcNCgljNS4yMDYtNS4yMDcsMTIuMDY2LTcuNzc5LDIwLjQwMi03Ljc3OWM4Ljk4MiwwLDE3Ljg1OSwyLjIzNCwyNi40MjEsNi43OTRsLTguNjIyLDE2LjkwNGMtNC41NzMtMy43NzctOS4yNTMtNS43MDMtMTQuMTQzLTUuNzAzDQoJYy0yLjMzMiwwLTQuNDI0LDAuNTg3LTYuMjQ0LDEuNzkxYy0yLjA5MiwxLjMzOC0zLjEwMSwzLjEwNy0zLjEwMSw1LjQzMmMwLDIuMzMyLDEuNTgsNC4zNjMsNC41NzUsNS43NzcNCgljMC44NTcsMC40MzYsNC4zMDMsMS42NywxMC40NTcsMy41NjZjNi43MjYsMi4xMDUsMTEuODQxLDQuODY3LDE1LjEyMiw4LjMzNWMzLjUzNSwzLjczMSw1LjI5NSw4Ljc1Niw1LjI5NSwxNC44NjQNCglDMTAxLjM3OSw5Ni4yNDIsMTAwLjQwMiwxMDEuMjM2LDk4LjI2NSwxMDUuMjY4IE00Ni44OTksMEMyMC45NzQsMCwwLDIwLjk2NiwwLDQ2Ljg4M1YxNTBoODE0LjA5OA0KCWMyNS44NSwwLDQ2Ljg1NC0yMC45ODgsNDYuODU0LTQ2Ljg5OFYwSDQ2Ljg5OXoiLz4NCjwvc3ZnPg0K" alt="StudioCanal">
+  <div class="m1">Open on desktop</div>
+  <div class="m2">This report needs a bigger screen. Open the same link on your computer.</div>
+</div>
+
+<header>
+  <div class="tb">
+    <img class="logoimg" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNC4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDQzMzYzKSAgLS0+DQo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYWxxdWVfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHdpZHRoPSI4NjAuOTVweCIgaGVpZ2h0PSIxNTBweCIgdmlld0JveD0iMCAwIDg2MC45NSAxNTAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDg2MC45NSAxNTAiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHJlY3QgeD0iMzAuOTc1IiB5PSIxNy41IiBmaWxsPSIjRkZGRkZGIiBzdHJva2U9IiMwMDAwMDAiIHN0cm9rZS13aWR0aD0iMC45ODY3IiB3aWR0aD0iODA4LjAwMiIgaGVpZ2h0PSIxMDciLz4NCjxwYXRoIGZpbGw9IiMxQTE3MUIiIGQ9Ik0yNzAuMTY1LDUyLjcwNmgtNC44MjlWOTkuMzRoNC44MjljMTQuMjc5LDAsMjMuNzEzLTkuMTAyLDIzLjcxMy0yMy4yOTENCglDMjkzLjg3OCw2MS44MTYsMjg0LjQ0NCw1Mi43MDYsMjcwLjE2NSw1Mi43MDYgTTUzNC4yMTMsODYuNzAzaDE3Ljk5NmwtOC44NS0yNi41NTdMNTM0LjIxMyw4Ni43MDN6IE0zOTYuNjcyLDUyLjk0DQoJYy02LjMwNiwwLTExLjg0MSwyLjMyNC0xNi41MzYsNi44OWMtNC41NDMsNC41MjktNi44NjEsOS44ODYtNi44NjEsMTYuMjE5YzAsNi41MTQsMi4yMTIsMTIuMjE3LDYuNzU2LDE2Ljc0Ng0KCWM0LjU1OSw0LjU1OSwxMC4xMTEsNi45MDYsMTYuNjQyLDYuOTA2YzYuNTczLDAsMTEuOTYxLTIuMzQ4LDE2LjU3OS02LjkwNmM0LjU0NS00LjUyOSw2Ljg3Ny0xMC4wOTYsNi44NzctMTYuNTQzDQoJYzAtNi41MzctMi4zMzItMTEuOTkyLTYuODc3LTE2LjUzNUM0MDguNjMzLDU1LjE1OSw0MDMuMTEsNTIuOTQsMzk2LjY3Miw1Mi45NCBNNzEyLjkyOCw4Ni43MDNoMTcuOTY3bC04Ljg3OS0yNi41NTcNCglMNzEyLjkyOCw4Ni43MDN6IE04MTcuMzQ4LDExNy42OTdoLTQ3LjY2NnYtODMuMzFoMjEuNjA1Vjk5LjM0aDI2LjA2MVYxMTcuNjk3TDgxNy4zNDgsMTE3LjY5N3ogTTc0Mi4yMzksMTE3LjY5N2wtNS40NzktMTQuNDc1DQoJaC0yOS44MjJsLTUuNjU0LDE0LjQ3NWgtMjIuOTNsMzIuMDE4LTgzLjMxaDIzLjU2MWwzMS40MTYsODMuMzFINzQyLjIzOXogTTY3NC4wODEsMTE3LjY5N2gtMjEuNjY2bC0zOS43ODEtNTF2NTFoLTIxLjY2NnYtODMuMzENCgloMjEuNjY2bDM5Ljc4MSw1MC45NThWMzQuMzg3aDIxLjY2NlYxMTcuNjk3eiBNNTYzLjUyMiwxMTcuNjk3bC01LjQxNi0xNC40NzVoLTI5LjkxbC01LjY4OCwxNC40NzVoLTIyLjg0MmwzMi4wMi04My4zMWgyMy41DQoJbDMxLjQ0Nyw4My4zMUg1NjMuNTIyeiBNNDk2LjgzOCwxMTMuOTM0YzAsMS4yMjEtMC45NjMsMi4xOTctMy4wMzcsMi45OGMtNS45NjEsMi0xMS4zNDYsMi45NzktMTYuNDkyLDIuOTc5DQoJYy03LjY0NSwwLTE0Ljk4NC0xLjg2Ny0yMi4wODgtNS43NDZjLTcuNjc0LTQuMzA1LTEzLjQ4LTEwLjE3Mi0xNy4xODQtMTcuMjEzYy0yLjE1OCw0LjE1Mi01LjAzMSw3Ljk0My04LjY1NywxMS4yODMNCgljLTguOTA2LDguMzUyLTE5LjgzMSwxMi40ODgtMzIuNzA5LDEyLjQ4OGMtMTMuMDAxLDAtMjMuOTU0LTQuMjQyLTMyLjg2MS0xMi41NzhjLTguNzcxLTguNDI2LTEzLjE5NC0xOC43NDYtMTMuMTk0LTMxLjA4NA0KCWMwLTkuNDM1LDIuNDIyLTE3Ljg4Miw3LjI5Ni0yNS4zNTNjNC45Mi03LjQyNSwxMS43MDctMTIuOTg0LDIwLjIzNy0xNi40MzdjNS41MjEtMi4yMDUsMTEuNTU1LTMuMzExLDE4LjExNS0zLjMxMQ0KCWMxMy40NTEsMCwyNC41MjUsNC4yMzUsMzMuMzExLDEyLjU1NmMzLjYyNywzLjQ0Niw2LjQ3OSw3LjM1LDguNjQ1LDExLjZsMi4xMDUtMy44MDdjNC45MDYtNy4zOCwxMS40MzYtMTIuODA0LDE5LjY4Mi0xNi4yNTcNCgljNS4zMjYtMi4yOTQsMTAuOTUzLTMuNDQ1LDE3LjA5Mi0zLjQ0NWM0LjEyMywwLDguNTc4LDAuNjc2LDEzLjMzLDEuODg4bDMuNTUxLDEuMjM0bDEuMjY0LDAuNTU3bDEuNTA0LDIuMjM0VjU5LjkybC0wLjQ4LDAuNzk4DQoJbC0xLjAyMS0wLjU3MmMtMS42ODgtMS42OTItNC4wOTItMy4wMDItNy40MDItNC4wNzdjLTMuNDMtMS4yNDktNi41MjktMS44MDctOS4xNzgtMS44MDdjLTkuNjg5LDAtMTcuNzg1LDUuMTMxLTIxLjQyNiwxMy42NTQNCgljLTEuMjM0LDIuNzk5LTEuNzc1LDUuNzkzLTEuNzc1LDkuMDAzYzAsNi4zMzYsMi4zMTYsMTEuNDM3LDcuMDEyLDE1LjQzOGM0LjMwMywzLjY3LDkuNjYsNS41NTIsMTUuOTc5LDUuNTUyDQoJYzcuMjI1LDAsMTIuNzkxLTEuOTcyLDE2Ljg1Mi02LjA5M2wwLjk2My0wLjY5MmwwLjU3MiwyLjEzN3YyMC42NzNINDk2LjgzOHogTTM0NC4zNTcsMTE3LjY5N0gzMjIuNzJ2LTgzLjMxaDIxLjYzN1YxMTcuNjk3eg0KCSBNMzA0LjMzNSwxMDUuMzU5Yy04LjEyNSw4LjIxNS0xNy42NjUsMTIuMzM4LTI4Ljc5OCwxMi4zMzhIMjQzLjY0di04My4zMWgzMS44OTdjMTEuMDE0LDAsMjAuNTUzLDQuMjIxLDI4LjYzMywxMi41NDENCgljOC4yMTQsOC4zMzYsMTIuMzUzLDE4LjAxLDEyLjM1MywyOS4xMjFDMzE2LjUyMiw4Ny4yNDIsMzEyLjM4NCw5Ny4wNjgsMzA0LjMzNSwxMDUuMzU5IE0yMzcuMTQsODIuNDc1DQoJYzAsNS43OTEtMC40NjcsMTAuMzItMS40NDUsMTMuNzY5Yy0xLjIzMyw0LjMzMi0zLjQ0NSw4LjIyOS02LjY5NSwxMS44ODVjLTcuMDExLDcuODY3LTE2LjY0MSwxMS43NjctMjguNzY4LDExLjc2Nw0KCWMtNS44OTgsMC0xMS4zOS0wLjk3OS0xNi40MTUtMi44NzNjLTExLjU1NS00LjQyNC0xNy44LTEyLjc2MS0xOS4wMDMtMjYuMTgxYy0wLjE5Ni0yLjQ4My0wLjM0Ni01LjIzNS0wLjM0Ni04LjM2NFYzNC4zODdoMjEuNjUNCgl2NDUuMDkxYzAsNS4yMDcsMC4xNjYsOC40MjgsMC40MjEsOS43OGwxLjkyNiw1LjExNWMyLjQ4Myw0LjM2Miw2LjQ0LDYuNDM4LDEyLjE0Miw2LjQzOGM1Ljg4MywwLDEwLjA1MS0yLjI1NiwxMi42MDktNi43ODcNCgljMS40NzUtMi42NjIsMi4yNDItNy41MzcsMi4yNDItMTQuNTQ5VjM0LjM4N2gyMS42ODJWODIuNDc1TDIzNy4xNCw4Mi40NzV6IE0xNTkuMTU3LDUyLjcwNmgtMTguMDI1djY0Ljk5MkgxMTkuNDhWNTIuNzA2aC0xNy41MjgNCglWMzQuMzg3aDU3LjIwNVY1Mi43MDZMMTU5LjE1Nyw1Mi43MDZ6IE05OC4yNjUsMTA1LjI2OGMtMi41MjcsNC44NDctNi42NjYsOC42NjYtMTIuNTMzLDExLjMwMQ0KCWMtNS4wMjUsMi4yMTEtMTAuNjgzLDMuMzI0LTE2Ljc3NiwzLjMyNGMtNi4xMjMsMC0xMi4zMzctMS4zMjQtMTguODgyLTMuOTg1Yy0zLjI1LTEuMzI0LTUuODA4LTIuNTQzLTcuNDQ4LTMuNzkxbC0yLjYxOC0xLjczDQoJbDkuMTMzLTE3LjM2MmM2LjU2LDUuNzE3LDEyLjkwOSw4LjQ1NSwxOS4xNTMsOC40NTVjMi45NjQsMCw1LjMxMi0wLjY2Miw3LjE3Ny0xLjg2NWMyLjEzNy0xLjQ3NSwzLjI4MS0zLjU4MiwzLjI4MS02LjM1DQoJYzAtMi4zNDctMS4xNDQtNC4zNDktMy40NzYtNi4wMjFjLTEuMDk5LTAuNzUyLTIuNzg0LTEuNDI5LTUuMTE2LTIuMjExYy0wLjc4Mi0wLjIyOC0yLjIxMS0wLjY2Mi00LjQyMy0xLjMxbC00LjQ1My0xLjM0DQoJYy0yLjczOC0wLjc5Ny01LjQ2Mi0xLjkxLTguMjMtMy4zODVjLTYuNTE1LTMuMzAzLTkuNzY1LTkuNTI1LTkuNzY1LTE4LjUyMWMwLTguNDM0LDIuNjYzLTE1LjIxMSw3LjkyOS0yMC4zMjcNCgljNS4yMDYtNS4yMDcsMTIuMDY2LTcuNzc5LDIwLjQwMi03Ljc3OWM4Ljk4MiwwLDE3Ljg1OSwyLjIzNCwyNi40MjEsNi43OTRsLTguNjIyLDE2LjkwNGMtNC41NzMtMy43NzctOS4yNTMtNS43MDMtMTQuMTQzLTUuNzAzDQoJYy0yLjMzMiwwLTQuNDI0LDAuNTg3LTYuMjQ0LDEuNzkxYy0yLjA5MiwxLjMzOC0zLjEwMSwzLjEwNy0zLjEwMSw1LjQzMmMwLDIuMzMyLDEuNTgsNC4zNjMsNC41NzUsNS43NzcNCgljMC44NTcsMC40MzYsNC4zMDMsMS42NywxMC40NTcsMy41NjZjNi43MjYsMi4xMDUsMTEuODQxLDQuODY3LDE1LjEyMiw4LjMzNWMzLjUzNSwzLjczMSw1LjI5NSw4Ljc1Niw1LjI5NSwxNC44NjQNCglDMTAxLjM3OSw5Ni4yNDIsMTAwLjQwMiwxMDEuMjM2LDk4LjI2NSwxMDUuMjY4IE00Ni44OTksMEMyMC45NzQsMCwwLDIwLjk2NiwwLDQ2Ljg4M1YxNTBoODE0LjA5OA0KCWMyNS44NSwwLDQ2Ljg1NC0yMC45ODgsNDYuODU0LTQ2Ljg5OFYwSDQ2Ljg5OXoiLz4NCjwvc3ZnPg0K" alt="StudioCanal">
+    <div class="right">
+      <span class="ghost" onclick="document.body.classList.toggle('dark')">Dark room</span>
+      <span class="ghost" onclick="window.print()">Print</span>
+      <span class="pill">UK licensing census &middot; Aug 2026</span>
+      <button class="cta" onclick="presentOn()">Present</button>
+    </div>
+  </div>
+</header>
+
+<div class="band herob">
+  <div class="col">
+    <div class="hero">
+      <div class="kick">UK licensing market census</div>
+      <h1 id="heroh"></h1>
+      <p id="herop"></p>
+    </div>
+    <div class="askwrap">
+      <div class="ask" id="askbox">
+        <input id="q" placeholder='Ask in plain English - a category name, "x vs y", or "where is the gap?"'
+               onfocus="askbox.classList.add('on')" onblur="askbox.classList.remove('on')"
+               onkeydown="if(event.key==='Enter')go()">
+        <button id="gobtn" onclick="go()">Show me</button>
+        <div class="sweep" id="sweep"></div>
+      </div>
+      <div class="chips" id="chips"></div>
+      <div class="status mono" id="status"></div>
+    </div>
+  </div>
+</div>
+
+<div class="band">
+  <div class="col">
+    <div id="stage">
+      <div class="viewhead"><h2 id="h1"></h2><span class="viewpill" id="vp"></span></div>
+      <div class="kpis" id="kpis"></div>
+      <div id="main"></div>
+      <div class="insight" id="ins"><div class="t" id="it"></div><div class="b" id="ib"></div></div>
+    </div>
+  </div>
+</div>
+
+<footer id="foot"></footer>
+
+<div class="scrim" id="scrim" onclick="closeDrawer()"></div>
+<aside class="drawer" id="drawer">
+  <div class="dh"><b id="dcat"></b><span class="x" onclick="closeDrawer()">esc</span></div>
+  <div class="dsub">The names behind this number</div>
+  <div class="dbody" id="dbody"></div>
+</aside>
+<div class="pbar" id="pbar">
+  <span class="pk" onclick="pPrev()">&#8592;</span><span id="pdots" style="display:flex;gap:6px"></span>
+  <span class="pk" onclick="pNext()">&#8594;</span><span class="pk" onclick="presentOff()">esc to exit</span>
+</div>
+
+<script>
+const DATA={"meta": {"title": "The UK Licensing Landscape - StudioCanal", "built": "August 2026", "heroH": "About 590 UK brands make licensed product. Seven in ten sit where StudioCanal already operates.", "heroP": "A category-by-category census of 22,363 UK online stores. Every licensee verified by hand. Ask for any cut of it below, or just scroll.", "coverageNote": "Brand counts include wholesalers a shop index cannot see - corrected x1.455, measured on StudioCanal's own 16 UK licensees (11 visible, 5 not).", "seasonalNote": "Christmas & seasonal (~5 brands) is reported separately: Halloween shares its index path and is already licensed.", "drawerFoot": "Every brand listed was verified by hand against its live site. Full evidence file available on request.", "stamp": "verified 01.08.2026 - analysis sha e38bbae6 - regenerates from source", "method": "Census of 22,363 UK online stores (StoreLeads GB index), stratified across 15 product categories, July-August 2026, plus 1,708 seasonal stores reported separately. Every counted licensee verified individually with named IP and live evidence (48 storefronts, 46 companies). Brand estimates corrected x1.455 for wholesale brands invisible to a shop index, measured on StudioCanal's own licensees. Density gap significant at 95% (CI 1.10-5.68x; bootstrap p = 0.007). The older-audience split is directional owing to small counts. Full methodology, confidence intervals and the named licensee list available on request.", "chips": [["Where's the gap?", "where is the gap"], ["Market size", "market size"], ["Kids vs older", "compare the audiences"], ["Jewellery vs games", "jewellery vs games"]], "suggest": ["where is the gap", "market size", "jewellery vs games", "how was this checked", "help"], "tour": [["overview", "the whole census at a glance"], ["gaps", "amber rows are where no older-audience licensee exists"], ["split", "and how the two audiences divide across categories"]]}, "prov": {"older": "older-audience = film, music, gaming, cult and classic titles; split is directional (small counts)", "kids": "kids & family = pre-school and children's properties", "sample": "uniform random draw from the StoreLeads GB index, stratified by category"}, "cats": [{"id": "apparel_clothing", "name": "Apparel & footwear", "side": "occupied", "older": 0, "kids": 135, "total": 135, "lo": 53, "hi": 348, "n": 3117, "fit": 4, "aliases": ["apparel", "clothing", "footwear", "fashion", "shoes"], "blurb": "4 verified licensees in 3,117 stores sampled - Disney, Paddington, Teletubbies (DHX/WildBrain) among them.", "prov": "4 verified / 3,117 sampled x 1.455 coverage = 135 est. brands", "zeroNote": "", "ev": [{"d": "ajkidsstudio.com", "ip": "Disney, Nickelodeon", "q": "In this officially licensed Disney product, your kid can dress like Tiana, Jasmine, Rapunzel, and many other princesses as they get ready", "s": "crawled and hand-verified, Jul-Aug 2026"}, {"d": "minischildrenswear.co.uk", "ip": "Paddington, Peter Rabbit (Frederick Warne)", "q": "Long-sleeved children’s top from our Paddington™ Out and About Collection! Dress your little one ready for adventure with our Paddington™ Out and About Top", "s": "crawled and hand-verified, Jul-Aug 2026"}, {"d": "shop.teletubbies.com", "ip": "Teletubbies (DHX/WildBrain)", "q": "100% Official Officially licenced Teletubbies characters and logo © products", "s": "crawled and hand-verified, Jul-Aug 2026"}, {"d": "slumbersleepwearco.com", "ip": "Disney", "q": "We are proud to offer our SEN Onesie design in an officially Licensed Disney Mickey Mouse print designed especially for Slumber Sleepwear Co.", "s": "crawled and hand-verified, Jul-Aug 2026"}]}, {"id": "toys_figurines", "name": "Toys & figurines", "side": "occupied", "older": 36, "kids": 71, "total": 107, "lo": 49, "hi": 232, "n": 1747, "fit": 6, "aliases": ["toy", "figurine", "plush", "doll"], "blurb": "6 verified licensees in 1,747 stores sampled - Aardman, Betty Boop (Fleischer), DC Comics among them.", "prov": "6 verified / 1,747 sampled x 1.455 coverage = 107 est. brands", "zeroNote": "", "ev": [{"d": "bigbisque.co.uk", "ip": "Aardman", "q": "top of page Sign Up Log In info@bigbisque.co.uk Home Products Aardman Wild In Art Other Licenced Products Our Products Slip Casting Moulds Glass Fusing Sundries Moulds ...", "s": "crawled and hand-verified, Jul-Aug 2026"}, {"d": "cscollectablesdirect.com", "ip": "Betty Boop (Fleischer)", "q": "commission Wade to produce a licensed figure which was followed during the next few years with international licensed characters such as Betty Boop, Snoopy, Mr Magoo, G...", "s": "crawled and hand-verified, Jul-Aug 2026"}, {"d": "ironstudios.co.uk", "ip": "DC Comics, Disney, Jurassic Park (Universal), HBO House of the Dragon", "q": "becoming the first Brazilian company to launch officially licensed products made entirely for collectors.", "s": "crawled and hand-verified, Jul-Aug 2026"}, {"d": "orangetreetoys.com", "ip": "Peter Rabbit (Frederick Warne), Paddington", "q": "We are also proud to hold the licence for the beloved Peter Rabbit™ collection, bringing Beatrix P", "s": "crawled and hand-verified, Jul-Aug 2026"}, {"d": "rainbowdesigns.co.uk", "ip": "Disney, Beatrix Potter, Peter Rabbit, Winnie the Pooh", "q": "Rainbow’s very first license was Disney; a license to produce fashion jewellery including brooches and enamelled button badges as well as", "s": "crawled and hand-verified, Jul-Aug 2026"}, {"d": "shopedx.xyz", "ip": "The Very Hungry Caterpillar / World of Eric Carle (Penguin Random House)", "q": "© 2025 Penguin Random House LLC. ERIC CARLE, THE VERY HUNGRY CATERPILLAR, THE WORLD OF ERIC CARLE logo, the Caterpillar logo and related desi", "s": "crawled and hand-verified, Jul-Aug 2026"}]}, {"id": "games_board_video", "name": "Games", "side": "occupied", "older": 63, "kids": 27, "total": 90, "lo": 49, "hi": 164, "n": 1148, "fit": 10, "aliases": ["game", "gaming", "board", "trading", "video"], "blurb": "10 verified licensees in 1,148 stores sampled - Blankety Blank, Across the Realms, My Hero Academia (plus Lamborghini among them.", "prov": "10 verified / 1,148 sampled x 1.455 coverage = 90 est. brands", "zeroNote": "", "ev": [{"d": "bigskygames.co.uk", "ip": "Blankety Blank, Catchphrase, Deal or No Deal, Who Wants to Be a Millionaire, Wheel of Fortune", "q": "Bring home the cheeky charm of the classic show with this officially licensed Blankety Blank party game.", "s": "crawled and hand-verified, Jul-Aug 2026"}, {"d": "bs5beyondgames.myshopify.com", "ip": "Across the Realms", "q": "Licensed by Across the Realms", "s": "crawled and hand-verified, Jul-Aug 2026"}, {"d": "gtomega.com", "ip": "My Hero Academia (plus Lamborghini, Xbox)", "q": "officially licensed My Hero Academia Gaming Chair, inspired by the epic battles and dynamic characters of the My Hero Academia: W", "s": "crawled and hand-verified, Jul-Aug 2026"}, {"d": "kontrolfreek.co.uk", "ip": "Activision (Call of Duty), Bungie (Destiny), PlayStation, Xbox, Nintendo", "q": "KONTROLFREEK® INTRODUCES OFFICIALLY LICENSED PERFORMANCE GRIPS™ COMPAT", "s": "crawled and hand-verified, Jul-Aug 2026"}, {"d": "mygaime.com", "ip": "Bandai Namco", "q": "Experience pinpoint precision with the new G'AIM'E Gun, officially licensed by Bandai Namco Entertainment Inc.", "s": "crawled and hand-verified, Jul-Aug 2026"}, {"d": "orchardtoys.com", "ip": "Bluey (BBC Studios / Ludo)", "q": "BLUEY™ and BLUEY™ character logos™ & ©Ludo Studios Ply Ltd 2018. Licensed by BBC Studios. BBC logo™ & BBC © BBC 1996.", "s": "crawled and hand-verified, Jul-Aug 2026"}, {"d": "plus-plus.co.uk", "ip": "Moomin Characters, Peanuts Worldwide", "q": "BIG Moominvalley Set - 120 pcs", "s": "crawled and hand-verified, Jul-Aug 2026"}, {"d": "retrogt.com", "ip": "Capcom, Atari, Midway", "q": "officially licensed by Capcom, Atari and Midway. We bring you Joust, Centipede, Ghost N Goblins, 1942 and Gauntlet!", "s": "crawled and hand-verified, Jul-Aug 2026"}, {"d": "seekersgames.co.uk", "ip": "Ben & Holly's Little Kingdom", "q": "'S LITTLE KINGDOM Head outside into your Little Kingdom and find the objects displayed on the magnets in this licensed set £17.99 More info SEEKERS Starter Pack + FREE ...", "s": "crawled and hand-verified, Jul-Aug 2026"}, {"d": "steamforged.com", "ip": "Dark Souls, Resident Evil, Elden Ring, Peaky Blinders +", "q": "check out our official card game adaptation Peaky Blinders™: Faster than Truth", "s": "crawled and hand-verified, Jul-Aug 2026"}]}, {"id": "art_prints_design", "name": "Art prints & design", "side": "occupied", "older": 40, "kids": 0, "total": 40, "lo": 11, "hi": 145, "n": 1630, "fit": 2, "aliases": ["art", "print", "poster", "design"], "blurb": "2 verified licensees in 1,630 stores sampled - StudioCanal, Sony Columbia Pictures among them.", "prov": "2 verified / 1,630 sampled x 1.455 coverage = 40 est. brands", "zeroNote": "", "ev": [{"d": "cellardoorgallery.com", "ip": "StudioCanal, Zorro, Living Dead Media", "q": "Officially Licensed by Studio Canal", "s": "crawled and hand-verified, Jul-Aug 2026"}, {"d": "theparallaxposterco.com", "ip": "Sony Columbia Pictures", "q": "Co Released with Bottleneck Gallery in New York Officially Licensed Product from Sony Columbia Pictures Designed by Laurent Durieux Hand numbered Limited Edition of 450...", "s": "crawled and hand-verified, Jul-Aug 2026"}]}, {"id": "antiques_collectibles", "name": "Antiques & collectibles", "side": "occupied", "older": 0, "kids": 20, "total": 20, "lo": 8, "hi": 51, "n": 962, "fit": 4, "aliases": ["antique", "collectib", "collectab", "memorabilia"], "blurb": "4 verified licensees in 962 stores sampled - Disney; Paddington, Disney (plus MoD, The Original Stormtrooper (Star Wars) among them.", "prov": "4 verified / 962 sampled x 1.455 coverage = 20 est. brands", "zeroNote": "", "ev": [{"d": "englishladiesco.com", "ip": "Disney; Paddington", "q": "Official Disney Collection Beloved Disney characters reimagined in elegant English Ladies fine bone china.", "s": "crawled and hand-verified, Jul-Aug 2026"}, {"d": "heritagecoins.co.uk", "ip": "Disney (plus MoD, RAF, NASA)", "q": "officially licensed coins from world-famous brands such as Disney, Bletchley Park, NASA, the Royal Navy and the Royal Air Force.", "s": "crawled and hand-verified, Jul-Aug 2026"}, {"d": "historyinyourhands.co.uk", "ip": "The Original Stormtrooper (Star Wars)", "q": "The Original Starwars Stormtrooper LED Keyring.", "s": "crawled and hand-verified, Jul-Aug 2026"}, {"d": "pobjoy.com", "ip": "Harry Potter (Warner Bros)", "q": "well known commemorative coins to pick from, but among the most renowned are the Harry Potter series, struck under licence from Warner Brothers. Especially as the Gring...", "s": "crawled and hand-verified, Jul-Aug 2026"}]}, {"id": "comics", "name": "Comics & animation", "side": "occupied", "older": 4, "kids": 8, "total": 12, "lo": 5, "hi": 26, "n": 937, "fit": 6, "aliases": ["comic", "animation", "anime", "manga"], "blurb": "6 verified licensees in 937 stores sampled - anime (TMS+), Hammer, Hey Duggee among them.", "prov": "6 verified / 937 sampled x 1.455 coverage = 12 est. brands", "zeroNote": "", "ev": [{"d": "alltheanime.fr", "ip": "anime (TMS+), Labyrinth (Henson)", "q": "© Tsukasa Hojo / NSP・TMS 1983 All rights reserved Under License to ANIME LIMITED Produced by TMS ENTERTAINMENT CO., LTD.", "s": "crawled and hand-verified, Jul-Aug 2026"}, {"d": "character-wear.co.uk", "ip": "Hammer, Godzilla, Evil Dead, Red Dwarf, Silence of the Lambs, Danger Mouse, Bagpuss", "q": "Character Wear Ltd | Retail Licensed Wholesale Clothing", "s": "crawled and hand-verified, Jul-Aug 2026"}, {"d": "characterville.co.uk", "ip": "Hey Duggee, Bluey (BBC Studios), Disney", "q": "Our Hey Duggee merchandise is officially licensed and our unique designs are exclusive to us.", "s": "crawled and hand-verified, Jul-Aug 2026"}, {"d": "kazoop-comics-shop.com", "ip": "classic UK comics (Rebellion, TI Media)", "q": "he Grasper , Queen of the Seas , Dare-A-Day Davy and The Nervs are now collected together for the first time, under license from TI Media Ltd. Many thought this collect...", "s": "crawled and hand-verified, Jul-Aug 2026"}, {"d": "shop.simonscat.com", "ip": "Simon's Cat (Simon's Cat Ltd)", "q": "to be working with Star Editions for the manufacture and fulfilment of all items in the official online shop under license from Simon’s Cat ltd. Star Editions also oper...", "s": "crawled and hand-verified, Jul-Aug 2026"}, {"d": "wholesale.bioworldinternational.co.uk", "ip": "Harry Potter, Minecraft, Sonic, Batman, Stranger Things", "q": "Show your loyalty to Slytherin house with this officially licensed Harry Potter beanie!", "s": "crawled and hand-verified, Jul-Aug 2026"}]}, {"id": "jewellery_watches", "name": "Jewellery & watches", "side": "whitespace", "older": 25, "kids": 25, "total": 50, "lo": 19, "hi": 127, "n": 2710, "fit": 4, "aliases": ["jewellery", "jewelry", "watch", "necklace"], "blurb": "4 verified licensees in 2,710 stores sampled - AC/DC, Marvel, Betty Boop (King Features) among them.", "prov": "4 verified / 2,710 sampled x 1.455 coverage = 50 est. brands", "zeroNote": "", "ev": [{"d": "alchemyengland.com", "ip": "AC/DC, David Bowie, Iron Maiden, Metallica, Pink Floyd", "q": "Original Alchemy resin giftware Licensed Merchandise", "s": "crawled and hand-verified, Jul-Aug 2026"}, {"d": "hotsincemonday.com", "ip": "Marvel, Star Wars", "q": "Officially licensed, with a single-stitch embroidered Scout patch on the chest, club lettering and printed art across the back, a", "s": "crawled and hand-verified, Jul-Aug 2026"}, {"d": "thebagfactoryuk.com", "ip": "Betty Boop (King Features)", "q": "Authorised Dealer - 100% Authentic & Officially Licensed Betty Boop Collectible", "s": "crawled and hand-verified, Jul-Aug 2026"}, {"d": "uk.ridge.com", "ip": "Peanuts Worldwide (Snoopy)", "q": "The limited edition Peanuts® Collection is built the same way for", "s": "crawled and hand-verified, Jul-Aug 2026"}]}, {"id": "gifts_excl_cards", "name": "Gifts & souvenirs", "side": "whitespace", "older": 0, "kids": 41, "total": 41, "lo": 11, "hi": 148, "n": 1303, "fit": 2, "aliases": ["gift", "souvenir", "hamper"], "blurb": "2 verified licensees in 1,303 stores sampled - Me to You (Tatty Teddy), Roald Dahl among them.", "prov": "2 verified / 1,303 sampled x 1.455 coverage = 41 est. brands", "zeroNote": "", "ev": [{"d": "boxergifts.com", "ip": "Me to You (Tatty Teddy)", "q": "Me to You Licensed Books", "s": "crawled and hand-verified, Jul-Aug 2026"}, {"d": "stareditions.com", "ip": "Roald Dahl, Gruffalo, Moomins, Mr Men, The Snowman, Jim Henson, Miffy", "q": "All our merchandise is officially licensed.", "s": "crawled and hand-verified, Jul-Aug 2026"}]}, {"id": "garden_outdoor", "name": "Garden & outdoor", "side": "whitespace", "older": 0, "kids": 28, "total": 28, "lo": 8, "hi": 100, "n": 1226, "fit": 2, "aliases": ["garden", "outdoor", "patio"], "blurb": "2 verified licensees in 1,226 stores sampled - Aardman (Wallace & Gromit), The Snowman & The Snowdog among them.", "prov": "2 verified / 1,226 sampled x 1.455 coverage = 28 est. brands", "zeroNote": "", "ev": [{"d": "perrytrade.co.uk", "ip": "Aardman (Wallace & Gromit), Peppa Pig", "q": "No.PH1020 Wallace & Gromit - Feathers Wanted Metal Wall Sign | vendor=Perry | type=LICENSED | tags=X-Y", "s": "crawled and hand-verified, Jul-Aug 2026"}, {"d": "transcon.co.uk", "ip": "The Snowman & The Snowdog", "q": "Licensed Products The Snowman & Snowdog The Snowman The Macneil Studio", "s": "crawled and hand-verified, Jul-Aug 2026"}]}, {"id": "beauty_bath_soaps", "name": "Beauty, bath & soaps", "side": "whitespace", "older": 0, "kids": 25, "total": 25, "lo": 4, "hi": 143, "n": 1538, "fit": 1, "aliases": ["beauty", "bath", "soap", "cosmetic", "skincare"], "blurb": "1 verified licensee in 1,538 stores sampled - Doctor Who (BBC Studios) among them.", "prov": "1 verified / 1,538 sampled x 1.455 coverage = 25 est. brands", "zeroNote": "", "ev": [{"d": "robertharrop.com", "ip": "Doctor Who (BBC Studios)", "q": "British Broadcasting Corporation and are used under licence. BBC logo © BBC 1996. DOCTOR WHO logo © BBC 1973. Licensed by BBC Studios.", "s": "crawled and hand-verified, Jul-Aug 2026"}]}, {"id": "pets", "name": "Pets", "side": "whitespace", "older": 0, "kids": 19, "total": 19, "lo": 3, "hi": 107, "n": 1355, "fit": 1, "aliases": ["pet", "dog", "cat "], "blurb": "1 verified licensee in 1,355 stores sampled - Disney among them.", "prov": "1 verified / 1,355 sampled x 1.455 coverage = 19 est. brands", "zeroNote": "", "ev": [{"d": "pawsomepawsboutique.co.uk", "ip": "Disney, Paddington, Emily in Paris", "q": "PPB meets Disney - Designed In house", "s": "crawled and hand-verified, Jul-Aug 2026"}]}, {"id": "kitchen_dining", "name": "Kitchen & dining", "side": "whitespace", "older": 8, "kids": 0, "total": 8, "lo": 1, "hi": 44, "n": 1121, "fit": 1, "aliases": ["kitchen", "dining", "cookware", "mug"], "blurb": "1 verified licensee in 1,121 stores sampled - Lord of the Rings among them.", "prov": "1 verified / 1,121 sampled x 1.455 coverage = 8 est. brands", "zeroNote": "", "ev": [{"d": "nemesisnowdropship.com", "ip": "Lord of the Rings, D&D, Terminator 2, Beetlejuice, Iron Maiden, AC/DC, Metallica, Harry Potter", "q": "Nemesis Now designs, develops and distributes exclusive officially licensed merchandise, giftware and collectibles.", "s": "crawled and hand-verified, Jul-Aug 2026"}]}, {"id": "cards_greetings", "name": "Greeting cards", "side": "whitespace", "older": 0, "kids": 6, "total": 6, "lo": 2, "hi": 22, "n": 892, "fit": 2, "aliases": ["greeting", "cards"], "blurb": "2 verified licensees in 892 stores sampled - Disney, Ladybird Books among them.", "prov": "2 verified / 892 sampled x 1.455 coverage = 6 est. brands", "zeroNote": "", "ev": [{"d": "hallmark.co.uk", "ip": "Disney, Harry Potter, Star Wars, Peanuts, Beatrix Potter", "q": "Encouragement Card Disney Winnie the Pooh - Pooh & Piglet | vendor=Hallmark | type=Single Card | tags=All_Licenced,Care_Support_Thinking_of_You,Disney_All,Disney_Other,...", "s": "crawled and hand-verified, Jul-Aug 2026"}, {"d": "kissmekwik.co.uk", "ip": "Ladybird Books", "q": "Illustration from the archives of Ladybird Books Ltd, used under licence from Ladybird Books Ltd.", "s": "crawled and hand-verified, Jul-Aug 2026"}]}, {"id": "homeware_decor", "name": "Homeware & decor", "side": "whitespace", "older": 0, "kids": 0, "total": 0, "lo": 0, "hi": 101, "n": 1571, "fit": 0, "aliases": ["homeware", "home decor", "decor", "interior", "furnish"], "blurb": "Zero found in 1,571 stores sampled. The data puts the ceiling at about 101 brands, corrected.", "prov": "0 verified / 1,571 sampled x 1.455 coverage = 0 est. brands", "zeroNote": "No licensee found across 1,571 stores sampled here. An absence this size caps the true count at about 101.", "ev": []}, {"id": "bedding_bath_textiles", "name": "Bedding & bath textiles", "side": "whitespace", "older": 0, "kids": 0, "total": 0, "lo": 0, "hi": 27, "n": 1106, "fit": 0, "aliases": ["bedding", "bed &", "linen", "duvet", "textile"], "blurb": "Zero found in 1,106 stores sampled. The data puts the ceiling at about 27 brands, corrected.", "prov": "0 verified / 1,106 sampled x 1.455 coverage = 0 est. brands", "zeroNote": "No licensee found across 1,106 stores sampled here. An absence this size caps the true count at about 27.", "ev": []}, {"id": "holidays_seasonal", "name": "Christmas & seasonal", "side": "mixed", "older": 0, "kids": 5, "total": 5, "lo": 2, "hi": 13, "n": 1708, "fit": 3, "aliases": ["seasonal", "christmas", "easter", "halloween"], "blurb": "3 verified licensees in 1,708 stores sampled - The Gruffalo, Harry Potter (Warner Bros), The Grinch (Universal/Dr. Seuss) among them.", "prov": "3 verified / 1,708 sampled x 1.455 coverage = 5 est. brands", "zeroNote": "", "ev": [{"d": "eur.b2b.anniversaryhouse.co.uk", "ip": "The Gruffalo, Peppa Pig, Beatrix Potter, The Snowman", "q": "Bring the magic of the deep dark wood to every celebration with our officially licensed The Gruffalo™ cake decoration range.", "s": "crawled and hand-verified, Jul-Aug 2026"}, {"d": "noma.co.uk", "ip": "Harry Potter (Warner Bros)", "q": "rner Bros. for Harry Potter™ lighting products , bringing the magic of the Wizarding World into homes through officially licensed designs. From classic Christmas tree l...", "s": "crawled and hand-verified, Jul-Aug 2026"}, {"d": "sillysanta.uk", "ip": "The Grinch (Universal/Dr. Seuss), Harry Potter (Warner Bros)", "q": "Our officially licensed The Grinch jumpers are so festive that even Santa Claus himself gets jealous!", "s": "crawled and hand-verified, Jul-Aug 2026"}]}], "views": {"overview": {"h": "The market at a glance", "pill": "full report", "mode": "all", "done": "the full report", "k": [["22,363", "UK stores analysed", 0, "census frame: StoreLeads GB index, stratified across 15 compared categories; seasonal reported separately"], ["48", "licensed storefronts verified", 0, "48 storefronts = 46 companies; every one checked by hand with named IP and live evidence"], ["2.49x", "denser where StudioCanal operates - significant", 1, "0.217% vs 0.087% of stores; 95% CI 1.10-5.68x; bootstrap p = 0.007"], ["~586", "UK licensee brands, estimated", 0, "sum of category estimates x 1.455 coverage correction, measured on StudioCanal's own licensees"]], "it": "What you are looking at", "ib": "Every UK online store in fifteen product categories, checked for brands that make product under an entertainment or character licence. Seven in ten of the ~586 brands sit in categories StudioCanal already licenses into. Click any category for the names."}, "gaps": {"h": "The open ground", "pill": "gap view", "mode": "zeros", "done": "the gap view", "k": [["7 of 9", "open categories, no older-audience licensee", 1, "counted directly from the verified licensee list"], ["2", "categories with no licensees at all", 0, "Homeware & decor, Bedding & bath textiles - 2,677 stores sampled between them"], ["~25", "older-audience brands in jewellery", 0, "4 verified / 2,710 sampled x 1.455 coverage = 50 est. brands"], ["~8", "in kitchen & dining", 0, "1 verified / 1,121 sampled x 1.455 coverage = 8 est. brands"]], "it": "Where nothing was found", "ib": "Amber-filled rows have no licensees of any kind; amber-edged rows have no older-audience licensee. Jewellery (~25 brands) and kitchen (~8) are the only open categories where older-audience licensing exists at all - and no studio dominates either."}, "market": {"h": "The whole market at once", "pill": "market size", "mode": "all", "done": "market size", "k": [["~586", "UK licensee brands", 1, "corrected x1.455 for wholesale brands a shop index cannot see"], ["~404", "in StudioCanal's categories", 0, "sum of the six occupied category estimates"], ["~177", "in the open categories", 0, "sum of the nine open category estimates"], ["~3%", "StudioCanal's share", 1, "16 UK licensees / ~586 brands = 2.7%"]], "it": "How big this is", "ib": "About 586 UK brands hold an entertainment or character licence across these categories. StudioCanal is licensed with 16 of them. All but one of the 48 storefronts we verified belong to companies StudioCanal does not currently work with."}, "split": {"h": "One audience against the other", "pill": "audience split", "mode": "older", "done": "the audience split", "k": [["~410", "kids & family brands", 0, "kids & family = pre-school and children's properties"], ["~176", "older-audience brands", 1, "older-audience = film, music, gaming, cult and classic titles; split is directional (small counts)"], ["7 of 9", "open categories: no older licensee", 0, "counted directly from the verified licensee list"], ["2.49x", "overall density gap", 0, "95% CI 1.10-5.68x; the audience split itself is directional"]], "it": "How the two audiences divide", "ib": "Solid bars are older-audience licensees, pale bars kids & family. Older-audience licensing concentrates hard in the categories StudioCanal already works in - outside them it barely exists. Counts per audience are small, so treat this split as directional."}, "olderonly": {"h": "Just the older-audience side", "pill": "older side", "mode": "older", "done": "the older-audience side", "k": [["~176", "older-audience brands", 1, "older-audience = film, music, gaming, cult and classic titles; split is directional (small counts)"], ["~143", "in StudioCanal's categories", 0, "sum across the six occupied categories"], ["~33", "in the open ones", 0, "jewellery and kitchen carry nearly all of it"], ["7 of 9", "open categories with none", 0, "counted from the verified list"]], "it": "The older-audience map", "ib": "Only the categories with solid bars stay lit. This is the side of the market that matches StudioCanal's catalogue."}, "kidsonly": {"h": "Just the kids & family side", "pill": "kids side", "mode": "kids", "done": "the kids & family side", "k": [["~410", "kids & family brands", 1, "kids & family = pre-school and children's properties"], ["~261", "in StudioCanal's categories", 0, "sum across the six occupied categories"], ["~144", "in the open ones", 0, "spread across seven of the nine open categories"], ["2", "categories with none at all", 0, "homeware and bedding"]], "it": "The kids & family map", "ib": "Only the categories with pale segments stay lit. This side is handled by a separate StudioCanal team."}, "method": {"h": "How this was checked", "pill": "how we checked", "mode": "fadeAll", "done": "the checks", "k": [["24,071", "stores analysed in total", 0, "including the seasonal row, which is reported separately"], ["146", "machine flags, all hand-checked", 1, "every machine positive was adjudicated by a person; none counted on the model's word alone"], ["11/11", "automated checks passed", 0, "inputs re-queried live, arithmetic recomputed independently, output byte-identical across runs"], ["x1.455", "coverage correction", 0, "16 StudioCanal UK licensees / 11 visible in a shop index - measured, not modelled"]], "it": "The short version of the method", "ib": "Census of 22,363 stores from the StoreLeads GB index, stratified by category. Every counted licensee was verified by hand with named IP and live evidence, and a manual gate re-checked the core inputs against live sources. The density gap is statistically significant two ways (95% CI 1.10-5.68x; bootstrap p = 0.007). The audience split is directional. Full methodology, confidence intervals and the licensee list are available on request."}}};
+const $=id=>document.getElementById(id);
+const NODEC=["#dbeafe","#ffedd5","#e0e7ff","#d5f1d0"];
+const CATS=DATA.cats;
+const MAXT=Math.max(...CATS.map(c=>c.total||0));
+const esc=t=>String(t).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+let current="overview", compare=null, focusCat=null;
+
+document.title=DATA.meta.title;
+$("heroh").textContent=DATA.meta.heroH;
+$("herop").innerHTML=esc(DATA.meta.heroP)+
+  ' <span class="hs" data-note="'+esc(DATA.meta.coverageNote)+'">+</span>';
+$("foot").innerHTML="<b>Method.</b> "+esc(DATA.meta.method)+
+  "<br>Prepared for StudioCanal &middot; "+esc(DATA.meta.built)+
+  ' &middot; <span class="mono" style="font-size:10.5px">'+esc(DATA.meta.stamp)+"</span>";
+$("chips").innerHTML=DATA.meta.chips.map(c=>
+  '<span class="chip" onclick="ask(\''+c[1]+'\')">'+esc(c[0])+"</span>").join("")+
+  '<span class="chip" onclick="tour()">Show me around</span>'+
+  '<span class="chip reset" onclick="reset()">&#8634; Full report</span>';
+
+function rowsHTML(mode){
+  const bar=(side,title,sub,hsNote)=>{
+    const items=CATS.filter(c=>c.side===side).map((c,ix)=>{
+      const zero=c.total===0;
+      let cls="row"+(zero?" zero":"");
+      if(mode==="zeros"){cls+=zero?" lit":(c.side==="whitespace"&&c.older===0?" lit2":" fade");}
+      if(mode==="older") cls+=c.older>0?"":" fade";
+      if(mode==="kids") cls+=c.kids>0?"":" fade";
+      return '<div class="'+cls+'" data-c="'+c.id+'">'+
+        '<div class="node" style="background:'+NODEC[ix%4]+'"></div>'+
+        '<div class="c">'+esc(c.name)+"</div>"+
+        '<div class="t">'+
+        (c.older?'<div class="a" style="width:'+(c.older/MAXT*100)+'%"></div>':"")+
+        (c.kids?'<div class="k" style="width:'+(c.kids/MAXT*100)+'%"></div>':"")+
+        '</div><div class="v">'+(c.total||0)+"</div></div>";}).join("");
+    return '<div class="panel"><h3>'+esc(title)+' <span>&middot; '+esc(sub)+"</span>"+
+      (hsNote?'<span class="hs" data-note="'+esc(hsNote)+'">+</span>':"")+"</h3>"+items+"</div>";};
+  return '<div class="grid">'+
+    bar("occupied","Where StudioCanal operates today","est. licensee brands",null)+
+    bar("whitespace","The open categories","no StudioCanal licensee",DATA.meta.seasonalNote)+
+    "</div>"+
+    '<div class="legend"><span><i style="background:var(--blue);opacity:.85"></i>Older audience</span>'+
+    '<span><i style="background:var(--bl100)"></i>Kids &amp; family</span></div>';
+}
+function duelHTML(a,b){
+  const card=c=>'<div class="duel" data-c="'+c.id+'" style="cursor:pointer"><div class="dn2">'+esc(c.name)+"</div>"+
+    '<div class="dv">'+c.total+"</div>"+
+    '<div class="db">'+(c.older?'<div class="a" style="width:'+(c.older/MAXT*100)+'%"></div>':"")+
+    (c.kids?'<div class="k" style="width:'+(c.kids/MAXT*100)+'%"></div>':"")+"</div>"+
+    '<div class="note">'+esc(c.blurb)+" Click for the names.</div></div>";
+  return '<div class="duelwrap">'+card(a)+'<div class="vs">vs</div>'+card(b)+"</div>";
+}
+function focusHTML(c){
+  return '<div class="duelwrap single"><div class="duel" data-c="'+c.id+'" style="cursor:pointer">'+
+    '<div class="dn2">'+esc(c.name)+' &middot; '+esc(c.side==="occupied"?"StudioCanal operates here":"open category")+"</div>"+
+    '<div class="dv">'+c.total+' <span style="font-size:14px;color:var(--faint)">est. brands ('+c.lo+"-"+c.hi+")</span></div>"+
+    '<div class="db">'+(c.older?'<div class="a" style="width:'+(c.older/MAXT*100)+'%"></div>':"")+
+    (c.kids?'<div class="k" style="width:'+(c.kids/MAXT*100)+'%"></div>':"")+"</div>"+
+    '<div class="note">'+esc(c.blurb)+" Click this card for the names and the exact licence wording.</div></div></div>";
+}
+function render(view){
+  let v;
+  if(view==="compare"&&compare){
+    v={h:compare[0].name+" against "+compare[1].name,pill:"compare",done:"the comparison",
+       k:[[String(compare[0].total),compare[0].name,1,compare[0].prov],
+          [String(compare[1].total),compare[1].name,0,compare[1].prov],
+          [compare[0].older+" / "+compare[1].older,"older audience",0,DATA.prov.older],
+          [compare[0].kids+" / "+compare[1].kids,"kids & family",0,DATA.prov.kids]],
+       it:"Side by side",ib:"Estimated licensee brands in each, split by audience. Click either card for the names behind it."};
+    $("main").innerHTML=duelHTML(compare[0],compare[1]);
+  } else if(view==="focus"&&focusCat){
+    const c=focusCat;
+    v={h:c.name+" up close",pill:"focus",done:c.name,
+       k:[[String(c.total),"est. brands",1,c.prov],[String(c.older),"older audience",0,DATA.prov.older],
+          [String(c.kids),"kids & family",0,DATA.prov.kids],[c.n.toLocaleString(),"stores sampled",0,DATA.prov.sample]],
+       it:c.name,ib:c.blurb};
+    $("main").innerHTML=focusHTML(c);
+  } else {
+    v=DATA.views[view]||DATA.views.overview;
+    $("main").innerHTML=rowsHTML(v.mode);
+  }
+  $("h1").textContent=v.h; $("vp").textContent=v.pill;
+  $("kpis").innerHTML=v.k.map(x=>
+    '<div class="kpi'+(x[2]?" hot":"")+'"'+(x[3]?' data-prov="'+esc(x[3])+'"':"")+
+    '><div class="n">'+esc(x[0])+'</div><div class="l">'+esc(x[1])+"</div></div>").join("");
+  $("it").textContent=v.it; $("ib").textContent=v.ib;
+  $("ins").classList.remove("in");
+  stagger(".kpi"); stagger(".row"); stagger(".duel");
+  setTimeout(()=>$("ins").classList.add("in"),300);
+  current=view; try{history.replaceState(null,"","#"+(view==="focus"?focusCat.id:view));}catch(e){}
+  if(!matchMedia("(prefers-reduced-motion: reduce)").matches)
+    document.querySelectorAll(".kpi .n").forEach(scramble);
+  if(document.body.classList.contains("present")) drawDots();
+  return v;
+}
+function stagger(sel){document.querySelectorAll(sel).forEach((e,i)=>{
+  setTimeout(()=>e.classList.add("in"),40+i*36);});}
+const DIGITS="0123456789";
+function scramble(el){const fin=el.textContent;let f=0;const n=Math.max(8,fin.length*3);
+  const t=setInterval(()=>{f++;
+    el.textContent=fin.split("").map((c,i)=>(/[0-9]/.test(c)&&f<n-i*2)?DIGITS[Math.random()*10|0]:c).join("");
+    if(f>=n){el.textContent=fin;clearInterval(t);}},32);}
+function findCat(q){
+  for(const c of CATS){
+    for(const al of c.aliases) if(q.includes(al)) return c;
+    for(const tok of q.split(/\s+/))
+      if(tok.length>3&&c.aliases.some(al=>al.startsWith(tok.slice(0,4)))) return c;
+  }
+  return null;
+}
+const INTENTS=[
+ ["gaps",   /gap|open|empt|white ?space|ground|nothing|zero|missing|vacan|unclaimed|untouched|blank/],
+ ["market", /market|big|size|total|whole|overall|worth|scale|how many|altogether|penetration/],
+ ["olderonly",/(older|grown|cult|classic)[a-z ]*(only|just|side|alone)|(only|just) [a-z ]*(older|grown|cult)/],
+ ["kidsonly",/(kid|family|child|pre.?school)[a-z ]*(only|just|side|alone)|(only|just) [a-z ]*(kid|child|family)/],
+ ["split",  /split|audience|both sides|breakdown|divide|mix|kids|family|older|child/],
+ ["method", /check|trust|method|proof|verif|how do you know|source|sure|accurate|reliab|believ/],
+ ["overview",/full|everything|overview|reset|start|all of it|whole report|home/]
+];
+function route(q){
+  q=q.toLowerCase().replace(/[?!.,;:]/g," ").replace(/\s+/g," ").trim();
+  if(q==="help"||q==="what can i ask") return "help";
+  const m=q.match(/([a-z& ]+?)\s+(?:vs|v|against|versus)\.?\s+([a-z& ]+)/);
+  if(m){const a=findCat(m[1].trim()),b=findCat(m[2].trim());
+    if(a&&b&&a!==b){compare=[a,b];return"compare";}}
+  const cat=findCat(q);
+  if(cat&&!/gap|market|audience|split|check|trust/.test(q)){focusCat=cat;return"focus";}
+  for(const [view,rx] of INTENTS) if(rx.test(q)) return view;
+  return null;
+}
+let busy=false;
+function typeOut(el,txt,cb){let i=0;el.innerHTML='<span class="cursor"></span>';
+  const span=document.createElement("span");el.prepend(span);
+  const t=setInterval(()=>{span.textContent=txt.slice(0,++i);
+    if(i>=txt.length){clearInterval(t);cb&&cb();}},14);}
+function go(){if(busy)return;
+  const q=$("q").value.trim(); if(!q)return;
+  tourStop(); const view=route(q);
+  if(view==="help"){
+    $("status").innerHTML='<span class="ok">&#9656;</span> try: a category name, "toys vs games", '+
+      '"where is the gap", "older side only", "market size", "how was this checked"';
+    return;}
+  if(view===null){
+    $("status").innerHTML='not sure what you mean - try "'+
+      DATA.meta.suggest[Math.floor(Math.random()*DATA.meta.suggest.length)]+'" or type help';
+    return;}
+  busy=true;
+  const label=view==="compare"?"compare":view==="focus"?"focus":(DATA.views[view]||DATA.views.overview).pill;
+  $("gobtn").disabled=true; $("gobtn").textContent="working";
+  $("sweep").classList.remove("go"); void $("sweep").offsetWidth; $("sweep").classList.add("go");
+  typeOut($("status"),"$ composing "+label+" view ...");
+  setTimeout(()=>{$("stage").classList.add("out");},260);
+  setTimeout(()=>{const v=render(view); $("stage").classList.remove("out");
+    $("status").innerHTML='<span class="ok">&#10003;</span> done - showing '+v.done;
+    $("gobtn").disabled=false; $("gobtn").textContent="Show me";
+    $("sweep").classList.remove("go"); busy=false;},560);}
+function ask(t){$("q").value=t;go();}
+function swapTo(view){$("stage").classList.add("out");
+  setTimeout(()=>{render(view);$("stage").classList.remove("out");},160);}
+function reset(){tourStop();$("q").value="";$("status").textContent="";swapTo("overview");}
+
+function openDrawer(catId){
+  const c=CATS.find(x=>x.id===catId); if(!c)return;
+  $("dcat").textContent=c.name;
+  $("dbody").innerHTML=(c.ev.length?c.ev.map(e=>'<div class="ev"><div class="en">'+esc(e.d)+"</div>"+
+      '<div class="ei">'+esc(e.ip)+"</div>"+
+      '<div class="eq">&ldquo;'+esc(e.q)+'&rdquo;</div>'+
+      '<div class="es">'+esc(e.s)+"</div></div>").join("")
+    :'<div class="ev"><div class="eq">'+esc(c.zeroNote||"No licensee found in this category.")+"</div></div>")+
+    '<div class="es" style="padding:6px 2px;color:var(--faint)">'+esc(DATA.meta.drawerFoot)+"</div>";
+  $("drawer").classList.add("open");$("scrim").classList.add("on");}
+function closeDrawer(){$("drawer").classList.remove("open");$("scrim").classList.remove("on");}
+$("stage").addEventListener("click",e=>{const r=e.target.closest("[data-c]");
+  if(r&&r.dataset.c&&!document.body.classList.contains("present"))openDrawer(r.dataset.c);});
+
+const ORDER=["overview","gaps","market","split","method"];let pi=0;
+function drawDots(){$("pdots").innerHTML=ORDER.map((v,i)=>
+  '<span class="pd'+(i===pi?" on":"")+'" onclick="pGo('+i+')"></span>').join("");}
+function pGo(i){pi=(i+ORDER.length)%ORDER.length;swapTo(ORDER[pi]);}
+function pNext(){pGo(pi+1);} function pPrev(){pGo(pi-1);}
+function presentOn(){tourStop();closeDrawer();document.body.classList.add("present");
+  pi=Math.max(0,ORDER.indexOf(current));drawDots();window.scrollTo({top:0});}
+function presentOff(){document.body.classList.remove("present");}
+document.addEventListener("keydown",e=>{
+  if(document.body.classList.contains("present")){
+    if(e.key==="ArrowRight"||e.key===" "){e.preventDefault();pNext();}
+    if(e.key==="ArrowLeft")pPrev();
+    if(e.key==="Escape")presentOff();
+  } else if(e.key==="Escape"){closeDrawer();tourStop();}});
+document.addEventListener("keydown",e=>{
+  if(document.activeElement===$("q")) return;
+  if(e.key==="/"||((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==="k")){
+    e.preventDefault();$("q").focus();}});
+
+let tourTimers=[];
+function tour(){tourStop();
+  DATA.meta.tour.forEach((s,i)=>{tourTimers.push(setTimeout(()=>{swapTo(s[0]);
+    setTimeout(()=>{$("status").innerHTML='<span class="ok">&#9656;</span> '+esc(s[1]);},220);},i*3000));});
+  tourTimers.push(setTimeout(()=>{$("status").innerHTML='<span class="ok">&#10003;</span> that is the tour - ask for anything else';},DATA.meta.tour.length*3000));}
+function tourStop(){tourTimers.forEach(clearTimeout);tourTimers=[];}
+
+const h=location.hash.replace("#","");
+const hc=CATS.find(c=>c.id===h);
+if(hc){focusCat=hc;render("focus");}else{render(DATA.views[h]?h:"overview");}
+</script>
+</body>
+</html>
